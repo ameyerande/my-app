@@ -2,6 +2,7 @@
 node {
    stage('SCM Checkout'){
     // Clone repo
+	
 	git 'https://github.com/ameyerande/my-app'//branch: 'master', 
 	//credentialsId: 'github', 
 	url: 'https://github.com/javahometech/myweb'
@@ -10,7 +11,8 @@ node {
    
    stage('Mvn Package'){
 	   // Build using maven
-	 sh 'mvn packege'
+	 def mavenHome = tool type: 'maven'
+	 sh '/usr/share/apache-maven/bin/mvn package'
    }
 }
 
