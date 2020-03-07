@@ -11,7 +11,7 @@ node {
    
    stage('Mvn Package'){
 	   // Build using maven
-	 def mavenHome = tool type: 'maven'
+	 def mavenHome = tool type: 'Maven'
 	 sh '/usr/share/apache-maven/bin/mvn package'
    }
 }
